@@ -30,13 +30,15 @@ def birthday_problem(n: int) -> float:
 
 
 def main() -> None:
+    num_nedeed: int = 0
     for i in range(1, 100):
         probability = birthday_problem(i)
         logging.info(f"Number of people: {i}, Probability: {probability * 100:.2f}%")
         if probability >= 0.5:
+            num_nedeed = i
             break
     logging.info(
-        f"Number of people needed for atleast 50% chance of sharing the same birthday: {i}"
+        f"Number of people needed for atleast 50% chance of sharing the same birthday: {num_nedeed}"
     )
 
 
