@@ -92,11 +92,21 @@ def decomposition_facteurs_premiers(n: int) -> list[list[int]]:
     return facteurs
 
 
-def main() -> None:
-    n = 289
+def test_decomposition(n: int) -> None:
     for p in liste_premiers(n):
         print(f"v_{p}({n}) = {valuation_p_adique(n, p)}")
     print(f"Décomposition en facteurs premiers: {decomposition_facteurs_premiers(n)}")
+
+
+def main() -> None:
+    n = 289
+    test_decomposition(n)
+
+    m = -380
+    test_decomposition(m)
+
+    a = 1000
+    test_decomposition(a)
 
 
 if __name__ == "__main__":
